@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #18263b;
+}
+
+aside {
+  position: fixed;
+  width: 220px;
+  height: 100vh;
+  background: #13243b;
+  color: #fff;
+  padding: 24px;
+}
+
+aside h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+aside button {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border: 0;
+  border-radius: 8px;
+  background: #1977ee;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+}
+
+aside button:hover {
+  background: #1265cc;
+}
+
+main {
+  margin-left: 220px;
+  padding: 28px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.cards b,
+.panel {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.cards b {
+  font-size: 20px;
+}
+
+.panel {
+  max-width: 900px;
+}
+
+.panel input,
+.panel textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 9px 0;
+  border: 1px solid #ccd6e3;
+  border-radius: 7px;
+  font-family: inherit;
+}
+
+.panel textarea {
+  resize: vertical;
+}
+
+.panel label {
+  display: block;
+  margin: 12px 0;
+}
+
+.panel label input {
+  width: auto;
+}
+
+.panel button {
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 7px;
+  background: #1977ee;
+  color: #fff;
+  cursor: pointer;
+}
+
+.panel button:hover {
+  background: #1265cc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 9px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+#toast {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #17263b;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  aside {
+    position: static;
+    width: 100%;
+    height: auto;
+ 
