@@ -103,7 +103,19 @@
 
   <div id="toast"></div>
 
-  <script src="/static/app.js"></script>
+  <script>
+  function show(id) {
+    document.querySelectorAll(".page").forEach(function (page) {
+      page.classList.remove("active");
+    });
+
+    var selectedPage = document.getElementById(id);
+
+    if (selectedPage) {
+      selectedPage.classList.add("active");
+    }
+  }
+</script>
 
 </body>
 </html>
