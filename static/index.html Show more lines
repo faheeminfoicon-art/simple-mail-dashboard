@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Simple Mail</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+  <aside>
+    <h2>Simple Mail</h2>
+
+    <button onclick="show('d')">Dashboard</button>
+    <button onclick="show('c')">Compose</button>
+    <button onclick="show('r')">Recipients</button>
+    <button onclick="show('t')">SMTP Test</button>
+  </aside>
+
+  <main>
+
+    <section id="d" class="page active">
+      <h1>Dashboard</h1>
+
+      <div class="cards">
+        <b id="campaigns">0 campaigns</b>
+        <b id="recipients">0 recipients</b>
+        <b id="sent">0 sent</b>
+      </div>
+
+      <div id="history" class="panel"></div>
+    </section>
+
+
+    <section id="c" class="page panel">
+      <h1>Compose</h1>
+
+      <input
+        id="name"
+        placeholder="Campaign name"
+      >
+
+      <input
+        id="subject"
+        placeholder="Subject"
+      >
+
+      <textarea
+        id="body"
+        rows="10"
+        placeholder="<h2>Hello {{name}}</h2>"
+      ></textarea>
+
+      <label>
+        <input id="confirm" type="checkbox">
+        All recipients opted in
+      </label>
+
+      <button onclick="send()">
+        Send
+      </button>
+    </section>
+
+
+    <section id="r" class="page panel">
+      <h1>Recipients</h1>
+
+      <p>
+        CSV columns: email,name,consented
+      </p>
+
+      <input
+        id="csv"
+        type="file"
+        accept=".csv"
+      >
+
+      <button onclick="upload()">
+        Upload
+      </button>
+    </section>
+
+
+    <section id="t" class="page panel">
+      <h1>SMTP Test</h1>
+
+      <p>
+        SMTP values are configured as Render environment variables.
+      </p>
+
+      <input
+        id="to"
+        placeholder="Test recipient email"
+      >
+
+      <button onclick="testMail()">
+        Send Test
+      </button>
+    </section>
+
+  </main>
+
+  <div id="toast"></div>
+
+  <script src="/static/app.js"></script>
+
+</body>
+</html>
